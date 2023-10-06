@@ -12,21 +12,23 @@ export class ChatbotComponent {
   chatMessages: { role: string, content: string }[] = [];
   @ViewChild('target')
   private myScrollContainer!: ElementRef;
+  showLoader:boolean = false;
   
   constructor(private openAiApiService: OpenAiApiService) { }
 
   sendMessage() {
     const userMessage = this.userMessage;
     this.chatMessages.push({ role: 'user', content: userMessage });
+    this.showLoader = true;
     this.openAiApiService.sendMessage(this.userMessage)
       .subscribe(response => {
+        this.showLoader = false;
         this.assistantReply = response.reply;
         this.chatMessages.push({ role: 'assistant', content: this.assistantReply });
         this.userMessage = '';
       });
   }
   ngAfterViewChecked() {
-    console.log("Saw some changes");
     this.scrollToElement();
   }
 

@@ -43,14 +43,20 @@
 .input-container {
   margin-top: 10px;
   padding-left:1vw;
+  display: flex;
+ 
 }
 
 .input-container input {
   padding: 0.5vw;
-  width: 61vw;
+  width: 62vw;
 }
 
 .input-container button {
   padding: 0.5vw 1vw;
   margin-left: 10px;
+}
+
+.loading{
+ margin-left: 10px;
 }
