@@ -12,7 +12,7 @@ export class ChatbotComponent {
   chatMessages: { role: string, content: string }[] = [];
   @ViewChild('target')
   private myScrollContainer!: ElementRef;
-
+  
   constructor(private openAiApiService: OpenAiApiService) { }
 
   sendMessage() {
@@ -37,4 +37,5 @@ export class ChatbotComponent {
       behavior: 'smooth'
     });
   }
+ 
 }

@@ -5,6 +5,7 @@
     </div>
   
   <div class="input-container">
-    <input [(ngModel)]="userMessage" id="input" type="text" placeholder="Ask GPT something..." autocomplete="off" autofocus="autofocus"/>
+    <input [(ngModel)]="userMessage" id="input" type="text" placeholder="Ask GPT something..." autocomplete="off" autofocus="autofocus" 
+      (keyup.enter)="sendMessage()"/>
     <button (click)="sendMessage()"><div class="circle"><i class="zmdi zmdi-mail-send"></i></div></button>
   </div>
