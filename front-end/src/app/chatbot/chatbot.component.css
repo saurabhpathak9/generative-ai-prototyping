@@ -7,7 +7,7 @@
 /* Works on Firefox */
 * {
   scrollbar-width: thin;
-  scrollbar-color:  #187aba #f7f7f7;
+  scrollbar-color:  #d0d1d1 #f7f7f7;
 }
 
 /* Works on Chrome, Edge, and Safari */
@@ -25,6 +25,7 @@
   margin-top: 10px;
   padding: 10px;
   border-radius: 25px;
+  margin-right:20px;
 }
 
 .user {
