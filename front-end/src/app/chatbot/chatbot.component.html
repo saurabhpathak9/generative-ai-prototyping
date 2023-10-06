@@ -1,4 +1,4 @@
-<div class="chat-container">
+<div class="chat-container" #target>
     <div *ngFor="let message of chatMessages" [ngClass]="message.role" class="message" id="bot">
       {{ message.content }}
     </div>

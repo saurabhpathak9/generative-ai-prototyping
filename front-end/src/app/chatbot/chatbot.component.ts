@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { OpenAiApiService } from '../services/open-ai-api.service';
 
 @Component({
@@ -10,8 +10,10 @@ export class ChatbotComponent {
   userMessage!: string;
   assistantReply!: string;
   chatMessages: { role: string, content: string }[] = [];
+  @ViewChild('target')
+  private myScrollContainer!: ElementRef;
 
-  constructor(private openAiApiService: OpenAiApiService){}
+  constructor(private openAiApiService: OpenAiApiService) { }
 
   sendMessage() {
     const userMessage = this.userMessage;
@@ -22,5 +24,17 @@ export class ChatbotComponent {
         this.chatMessages.push({ role: 'assistant', content: this.assistantReply });
         this.userMessage = '';
       });
+  }
+  ngAfterViewChecked() {
+    console.log("Saw some changes");
+    this.scrollToElement();
+  }
+
+  scrollToElement(): void {
+    this.myScrollContainer.nativeElement.scroll({
+      top: this.myScrollContainer.nativeElement.scrollHeight,
+      left: 0,
+      behavior: 'smooth'
+    });
   }
 }
