@@ -7,14 +7,14 @@
 /* Works on Firefox */
 * {
   scrollbar-width: thin;
-  scrollbar-color:  beige #d0edff;
+  scrollbar-color:  #187aba #f7f7f7;
 }
 
 /* Works on Chrome, Edge, and Safari */
 *::-webkit-scrollbar {
   width: 12px;
   scrollbar-width: thin;
-  scrollbar-color: #d0edff beige;
+  scrollbar-color:  #187aba #f7f7f7;
 }
 
 .message {
@@ -28,24 +28,26 @@
 }
 
 .user {
-  background-color: #d0edff;
+  background-color: #187aba;
+  color:white;
 }
 
 .assistant {
   margin-bottom: 10px;
   margin-top: 10px;
-  background-color: beige;
+  background-color: #f7f7f7;
   padding: 10px;
   border-radius: 25px;
 }
 
 .input-container {
   margin-top: 10px;
+  padding-left:1vw;
 }
 
 .input-container input {
   padding: 0.5vw;
-  width: 50vw;
+  width: 61vw;
 }
 
 .input-container button {
